@@ -33,15 +33,17 @@
             this.btnaceptar = new FontAwesome.Sharp.IconButton();
             this.LBCONTENIDO = new System.Windows.Forms.Label();
             this.LBTITULO = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(40, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(27, 55);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(270, 209);
+            this.pictureBox1.Size = new System.Drawing.Size(311, 208);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
@@ -71,7 +73,7 @@
             this.LBCONTENIDO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
             this.LBCONTENIDO.Font = new System.Drawing.Font("Comfortaa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LBCONTENIDO.ForeColor = System.Drawing.Color.Black;
-            this.LBCONTENIDO.Location = new System.Drawing.Point(23, 250);
+            this.LBCONTENIDO.Location = new System.Drawing.Point(23, 274);
             this.LBCONTENIDO.Name = "LBCONTENIDO";
             this.LBCONTENIDO.Size = new System.Drawing.Size(635, 146);
             this.LBCONTENIDO.TabIndex = 27;
@@ -84,12 +86,21 @@
             this.LBTITULO.BackColor = System.Drawing.Color.Transparent;
             this.LBTITULO.Font = new System.Drawing.Font("Comfortaa", 16.25F);
             this.LBTITULO.ForeColor = System.Drawing.Color.Black;
-            this.LBTITULO.Location = new System.Drawing.Point(331, 101);
+            this.LBTITULO.Location = new System.Drawing.Point(356, 141);
             this.LBTITULO.Name = "LBTITULO";
-            this.LBTITULO.Size = new System.Drawing.Size(314, 53);
+            this.LBTITULO.Size = new System.Drawing.Size(289, 53);
             this.LBTITULO.TabIndex = 28;
             this.LBTITULO.Text = "Diagramonus Inc 2021";
             this.LBTITULO.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(684, 49);
+            this.panel1.TabIndex = 29;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
             // FormInfo
             // 
@@ -97,6 +108,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(684, 516);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.LBTITULO);
             this.Controls.Add(this.LBCONTENIDO);
             this.Controls.Add(this.btnaceptar);
@@ -114,5 +126,6 @@
         private FontAwesome.Sharp.IconButton btnaceptar;
         private System.Windows.Forms.Label LBCONTENIDO;
         private System.Windows.Forms.Label LBTITULO;
+        private System.Windows.Forms.Panel panel1;
     }
 }

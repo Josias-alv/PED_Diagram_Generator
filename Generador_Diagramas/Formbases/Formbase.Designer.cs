@@ -73,6 +73,7 @@
             this.Name = "Formbase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Formbase_FormClosing);
             this.ResumeLayout(false);
 
         }

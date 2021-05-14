@@ -16,8 +16,9 @@ namespace Generador_Diagramas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Formprincipal());
-            //Application.Run(new PruebaDiagrama());
+            //Application.Run(new FormHistorial());
+            //Application.Run(new FormCambioPassword());
+            Application.Run(new FormLogin());
         }
     }
 }

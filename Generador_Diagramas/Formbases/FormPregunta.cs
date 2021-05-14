@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Generador_Diagramas.Formbases
 {
-    public partial class FormPregunta : InvocadoBase
+    public partial class FormPregunta : InvocadoBase //FORMPERSONALIZADO PARA MENSAJES DE CUESTIONAMIENTO
     {
         public FormPregunta(string titulo, string mensaje)
         {
@@ -20,6 +20,7 @@ namespace Generador_Diagramas.Formbases
             LBTITULO.Text = titulo;
             LBCONTENIDO.Text = mensaje;
         }
+        //NOS AYUDA A REDONDEAR EL FORM 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private extern static IntPtr CreateRoundRectRgn(

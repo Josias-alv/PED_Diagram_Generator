@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Generador_Diagramas.Formbases
 {
-    public partial class FormCompletado : InvocadoBase
+    public partial class FormCompletado : InvocadoBase //FORMPERSONALIZADO PARA MENSAJES 
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Generador_Diagramas.Formbases
 {
-    public partial class FormError : InvocadoBase
+    public partial class FormError : InvocadoBase //FORMPERSONALIZADO PARA MENSAJES DE ERROR
     {
         public FormError(string titulo, string mensaje)
         {
@@ -30,6 +30,11 @@ namespace Generador_Diagramas.Formbases
                int nWidthElipse,
                int nHeightElipse
            );
+        public static void Mensaje(string titulo, string mensaje)
+        {
+            FormError form = new FormError(titulo, mensaje);
+            form.ShowDialog();
+        }
         private void btnaceptar_Click(object sender, EventArgs e)
         {
             this.Close();

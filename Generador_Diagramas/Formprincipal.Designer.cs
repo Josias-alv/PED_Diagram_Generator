@@ -34,7 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnexit = new FontAwesome.Sharp.IconButton();
             this.panelInvocarForms = new System.Windows.Forms.Panel();
-            this.panelProperties = new System.Windows.Forms.Panel();
+            this.PanelDIAGRAM = new System.Windows.Forms.Panel();
+            this.DiagramaVer = new MindFusion.Diagramming.WinForms.DiagramView();
+            this.Diagrama = new MindFusion.Diagramming.Diagram();
+            this.panelAAAA = new System.Windows.Forms.Panel();
+            this.pANELproperties = new System.Windows.Forms.Panel();
             this.GridPropiedades = new System.Windows.Forms.PropertyGrid();
             this.panelfig = new System.Windows.Forms.Panel();
             this.TabCTR = new System.Windows.Forms.TabControl();
@@ -43,8 +47,6 @@
             this.Conectores = new System.Windows.Forms.TabPage();
             this.lstFlechasConectors = new System.Windows.Forms.ListBox();
             this.CBMTipoFlechaConectors = new System.Windows.Forms.ComboBox();
-            this.DiagramaVer = new MindFusion.Diagramming.WinForms.DiagramView();
-            this.Diagrama = new MindFusion.Diagramming.Diagram();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -52,14 +54,11 @@
             this.BTNAcerca = new FontAwesome.Sharp.IconButton();
             this.BTNINFO = new FontAwesome.Sharp.IconButton();
             this.SubmenuConvertir = new System.Windows.Forms.Panel();
-            this.BTNImprimir = new FontAwesome.Sharp.IconButton();
             this.BTNPNG = new FontAwesome.Sharp.IconButton();
-            this.BTNSVG = new FontAwesome.Sharp.IconButton();
             this.BTNPDF = new FontAwesome.Sharp.IconButton();
             this.btnConvertir = new FontAwesome.Sharp.IconButton();
             this.SubmenuEditar = new System.Windows.Forms.Panel();
-            this.BtnDeshacer = new FontAwesome.Sharp.IconButton();
-            this.btnRehacer = new FontAwesome.Sharp.IconButton();
+            this.btneliminar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.SubmenuArchivo = new System.Windows.Forms.Panel();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
@@ -67,15 +66,15 @@
             this.btnnuevo = new FontAwesome.Sharp.IconButton();
             this.OpenDialog = new System.Windows.Forms.OpenFileDialog();
             this.SaveDialog = new System.Windows.Forms.SaveFileDialog();
-            this.hidden = new MindFusion.Diagramming.Diagram();
-            this.ContextMenu = new System.Windows.Forms.ContextMenu();
-            this._menuItemDelete = new System.Windows.Forms.MenuItem();
+            this.btnsettings = new FontAwesome.Sharp.IconPictureBox();
             this.panelsidebar.SuspendLayout();
             this.paneltop.SuspendLayout();
             this.panelfill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ActualSeleccionbox)).BeginInit();
             this.panelInvocarForms.SuspendLayout();
-            this.panelProperties.SuspendLayout();
+            this.PanelDIAGRAM.SuspendLayout();
+            this.panelAAAA.SuspendLayout();
+            this.pANELproperties.SuspendLayout();
             this.panelfig.SuspendLayout();
             this.TabCTR.SuspendLayout();
             this.Figuras.SuspendLayout();
@@ -87,6 +86,7 @@
             this.SubmenuConvertir.SuspendLayout();
             this.SubmenuEditar.SuspendLayout();
             this.SubmenuArchivo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnsettings)).BeginInit();
             this.SuspendLayout();
             // 
             // panelsidebar
@@ -97,15 +97,16 @@
             // 
             // paneltop
             // 
+            this.paneltop.Controls.Add(this.btnsettings);
             this.paneltop.Controls.Add(this.label1);
             this.paneltop.Controls.Add(this.ActualSeleccionbox);
-            this.paneltop.Size = new System.Drawing.Size(1115, 89);
+            this.paneltop.Size = new System.Drawing.Size(1104, 89);
             // 
             // panelfill
             // 
             this.panelfill.Controls.Add(this.panelInvocarForms);
             this.panelfill.Location = new System.Drawing.Point(283, 89);
-            this.panelfill.Size = new System.Drawing.Size(1115, 850);
+            this.panelfill.Size = new System.Drawing.Size(1104, 850);
             // 
             // BTNArchivo
             // 
@@ -167,7 +168,7 @@
             this.btnexit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnexit.IconSize = 36;
             this.btnexit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnexit.Location = new System.Drawing.Point(0, 706);
+            this.btnexit.Location = new System.Drawing.Point(0, 574);
             this.btnexit.Name = "btnexit";
             this.btnexit.Size = new System.Drawing.Size(283, 61);
             this.btnexit.TabIndex = 21;
@@ -179,42 +180,82 @@
             // 
             // panelInvocarForms
             // 
-            this.panelInvocarForms.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelInvocarForms.Controls.Add(this.panelProperties);
-            this.panelInvocarForms.Controls.Add(this.panelfig);
-            this.panelInvocarForms.Controls.Add(this.DiagramaVer);
+            this.panelInvocarForms.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panelInvocarForms.Controls.Add(this.PanelDIAGRAM);
+            this.panelInvocarForms.Controls.Add(this.panelAAAA);
             this.panelInvocarForms.Location = new System.Drawing.Point(18, 19);
             this.panelInvocarForms.Name = "panelInvocarForms";
             this.panelInvocarForms.Size = new System.Drawing.Size(1081, 820);
             this.panelInvocarForms.TabIndex = 0;
             // 
-            // panelProperties
+            // PanelDIAGRAM
             // 
-            this.panelProperties.Controls.Add(this.GridPropiedades);
-            this.panelProperties.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelProperties.Location = new System.Drawing.Point(0, 444);
-            this.panelProperties.Name = "panelProperties";
-            this.panelProperties.Size = new System.Drawing.Size(379, 376);
-            this.panelProperties.TabIndex = 10;
+            this.PanelDIAGRAM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.PanelDIAGRAM.Controls.Add(this.DiagramaVer);
+            this.PanelDIAGRAM.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelDIAGRAM.Location = new System.Drawing.Point(345, 0);
+            this.PanelDIAGRAM.Name = "PanelDIAGRAM";
+            this.PanelDIAGRAM.Size = new System.Drawing.Size(736, 820);
+            this.PanelDIAGRAM.TabIndex = 11;
+            // 
+            // DiagramaVer
+            // 
+            this.DiagramaVer.AllowDrop = true;
+            this.DiagramaVer.Behavior = MindFusion.Diagramming.Behavior.DrawLinks;
+            this.DiagramaVer.Diagram = this.Diagrama;
+            this.DiagramaVer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DiagramaVer.LicenseKey = null;
+            this.DiagramaVer.Location = new System.Drawing.Point(0, 0);
+            this.DiagramaVer.Name = "DiagramaVer";
+            this.DiagramaVer.Size = new System.Drawing.Size(736, 820);
+            this.DiagramaVer.TabIndex = 8;
+            this.DiagramaVer.Text = "DiagramaVer";
+            this.DiagramaVer.DragDrop += new System.Windows.Forms.DragEventHandler(this.DiagramaVer_DragDrop);
+            this.DiagramaVer.DragOver += new System.Windows.Forms.DragEventHandler(this.DiagramaVer_DragOver);
+            // 
+            // Diagrama
+            // 
+            this.Diagrama.TouchThreshold = 0F;
+            this.Diagrama.NodeClicked += new System.EventHandler<MindFusion.Diagramming.NodeEventArgs>(this.Diagrama_NodeClicked);
+            this.Diagrama.NodeDeactivated += new System.EventHandler<MindFusion.Diagramming.NodeEventArgs>(this.Diagrama_NodeDeactivated);
+            // 
+            // panelAAAA
+            // 
+            this.panelAAAA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.panelAAAA.Controls.Add(this.pANELproperties);
+            this.panelAAAA.Controls.Add(this.panelfig);
+            this.panelAAAA.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelAAAA.Location = new System.Drawing.Point(0, 0);
+            this.panelAAAA.Name = "panelAAAA";
+            this.panelAAAA.Size = new System.Drawing.Size(345, 820);
+            this.panelAAAA.TabIndex = 10;
+            // 
+            // pANELproperties
+            // 
+            this.pANELproperties.Controls.Add(this.GridPropiedades);
+            this.pANELproperties.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pANELproperties.Location = new System.Drawing.Point(0, 414);
+            this.pANELproperties.Name = "pANELproperties";
+            this.pANELproperties.Size = new System.Drawing.Size(345, 406);
+            this.pANELproperties.TabIndex = 12;
             // 
             // GridPropiedades
             // 
             this.GridPropiedades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.GridPropiedades.Location = new System.Drawing.Point(0, 0);
             this.GridPropiedades.Name = "GridPropiedades";
-            this.GridPropiedades.Size = new System.Drawing.Size(379, 376);
+            this.GridPropiedades.Size = new System.Drawing.Size(345, 406);
             this.GridPropiedades.TabIndex = 1;
             this.GridPropiedades.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.PropiedadEditChange);
             // 
             // panelfig
             // 
+            this.panelfig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.panelfig.Controls.Add(this.TabCTR);
             this.panelfig.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelfig.Location = new System.Drawing.Point(0, 0);
             this.panelfig.Name = "panelfig";
-            this.panelfig.Size = new System.Drawing.Size(379, 444);
+            this.panelfig.Size = new System.Drawing.Size(345, 414);
             this.panelfig.TabIndex = 9;
             // 
             // TabCTR
@@ -222,20 +263,21 @@
             this.TabCTR.Controls.Add(this.Figuras);
             this.TabCTR.Controls.Add(this.Conectores);
             this.TabCTR.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabCTR.Font = new System.Drawing.Font("Comfortaa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TabCTR.Location = new System.Drawing.Point(0, 0);
             this.TabCTR.Name = "TabCTR";
             this.TabCTR.SelectedIndex = 0;
-            this.TabCTR.Size = new System.Drawing.Size(379, 444);
+            this.TabCTR.Size = new System.Drawing.Size(345, 414);
             this.TabCTR.TabIndex = 1;
             // 
             // Figuras
             // 
             this.Figuras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
             this.Figuras.Controls.Add(this.lstNODOList);
-            this.Figuras.Location = new System.Drawing.Point(4, 22);
+            this.Figuras.Location = new System.Drawing.Point(4, 30);
             this.Figuras.Name = "Figuras";
             this.Figuras.Padding = new System.Windows.Forms.Padding(3);
-            this.Figuras.Size = new System.Drawing.Size(371, 418);
+            this.Figuras.Size = new System.Drawing.Size(337, 380);
             this.Figuras.TabIndex = 0;
             this.Figuras.Text = "Figuras";
             // 
@@ -244,10 +286,11 @@
             this.lstNODOList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lstNODOList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstNODOList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.lstNODOList.Font = new System.Drawing.Font("Comfortaa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstNODOList.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lstNODOList.Location = new System.Drawing.Point(3, 3);
             this.lstNODOList.Name = "lstNODOList";
-            this.lstNODOList.Size = new System.Drawing.Size(365, 412);
+            this.lstNODOList.Size = new System.Drawing.Size(331, 374);
             this.lstNODOList.Sorted = true;
             this.lstNODOList.TabIndex = 8;
             this.lstNODOList.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstNODOList_DrawItem);
@@ -259,10 +302,10 @@
             this.Conectores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
             this.Conectores.Controls.Add(this.lstFlechasConectors);
             this.Conectores.Controls.Add(this.CBMTipoFlechaConectors);
-            this.Conectores.Location = new System.Drawing.Point(4, 22);
+            this.Conectores.Location = new System.Drawing.Point(4, 30);
             this.Conectores.Name = "Conectores";
             this.Conectores.Padding = new System.Windows.Forms.Padding(3);
-            this.Conectores.Size = new System.Drawing.Size(77, 418);
+            this.Conectores.Size = new System.Drawing.Size(337, 380);
             this.Conectores.TabIndex = 1;
             this.Conectores.Text = "Conectores";
             // 
@@ -273,7 +316,7 @@
             this.lstFlechasConectors.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.lstFlechasConectors.Location = new System.Drawing.Point(3, 3);
             this.lstFlechasConectors.Name = "lstFlechasConectors";
-            this.lstFlechasConectors.Size = new System.Drawing.Size(71, 391);
+            this.lstFlechasConectors.Size = new System.Drawing.Size(331, 345);
             this.lstFlechasConectors.TabIndex = 4;
             this.lstFlechasConectors.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstFlechasConectors_DrawItem);
             this.lstFlechasConectors.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.lstFlechasConectors_MeasureItem);
@@ -283,48 +326,28 @@
             // 
             this.CBMTipoFlechaConectors.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.CBMTipoFlechaConectors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBMTipoFlechaConectors.Font = new System.Drawing.Font("Comfortaa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBMTipoFlechaConectors.Items.AddRange(new object[] {
             "Linea Recta",
             "Linea Curva",
             "Linea Perpendicular"});
-            this.CBMTipoFlechaConectors.Location = new System.Drawing.Point(3, 394);
+            this.CBMTipoFlechaConectors.Location = new System.Drawing.Point(3, 348);
             this.CBMTipoFlechaConectors.Name = "CBMTipoFlechaConectors";
-            this.CBMTipoFlechaConectors.Size = new System.Drawing.Size(71, 21);
+            this.CBMTipoFlechaConectors.Size = new System.Drawing.Size(331, 29);
             this.CBMTipoFlechaConectors.TabIndex = 3;
+            this.CBMTipoFlechaConectors.Visible = false;
             this.CBMTipoFlechaConectors.SelectedValueChanged += new System.EventHandler(this.CBMTipoFlechaConectors_SelectedValueChanged);
-            // 
-            // DiagramaVer
-            // 
-            this.DiagramaVer.AllowDrop = true;
-            this.DiagramaVer.Behavior = MindFusion.Diagramming.Behavior.DrawLinks;
-            this.DiagramaVer.Diagram = this.Diagrama;
-            this.DiagramaVer.Dock = System.Windows.Forms.DockStyle.Right;
-            this.DiagramaVer.LicenseKey = null;
-            this.DiagramaVer.Location = new System.Drawing.Point(379, 0);
-            this.DiagramaVer.Name = "DiagramaVer";
-            this.DiagramaVer.Size = new System.Drawing.Size(702, 820);
-            this.DiagramaVer.TabIndex = 8;
-            this.DiagramaVer.Text = "DiagramaVer";
-            this.DiagramaVer.DragDrop += new System.Windows.Forms.DragEventHandler(this.DiagramaVer_DragDrop);
-            this.DiagramaVer.DragOver += new System.Windows.Forms.DragEventHandler(this.DiagramaVer_DragOver);
-            // 
-            // Diagrama
-            // 
-            this.Diagrama.TouchThreshold = 0F;
-            this.Diagrama.LinkClicked += new System.EventHandler<MindFusion.Diagramming.LinkEventArgs>(this.Diagrama_LinkClicked);
-            this.Diagrama.NodeActivated += new System.EventHandler<MindFusion.Diagramming.NodeEventArgs>(this.Diagrama_NodeActivated);
-            this.Diagrama.NodeClicked += new System.EventHandler<MindFusion.Diagramming.NodeEventArgs>(this.Diagrama_NodeClicked);
-            this.Diagrama.NodeDeactivated += new System.EventHandler<MindFusion.Diagramming.NodeEventArgs>(this.Diagrama_NodeDeactivated);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(22, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(241, 136);
+            this.pictureBox1.Size = new System.Drawing.Size(241, 155);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panelLogo
             // 
@@ -357,7 +380,7 @@
             this.SubmenuInformacion.BackColor = System.Drawing.Color.White;
             this.SubmenuInformacion.Controls.Add(this.BTNAcerca);
             this.SubmenuInformacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubmenuInformacion.Location = new System.Drawing.Point(0, 659);
+            this.SubmenuInformacion.Location = new System.Drawing.Point(0, 527);
             this.SubmenuInformacion.Name = "SubmenuInformacion";
             this.SubmenuInformacion.Size = new System.Drawing.Size(283, 47);
             this.SubmenuInformacion.TabIndex = 26;
@@ -398,7 +421,7 @@
             this.BTNINFO.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BTNINFO.IconSize = 36;
             this.BTNINFO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNINFO.Location = new System.Drawing.Point(0, 598);
+            this.BTNINFO.Location = new System.Drawing.Point(0, 466);
             this.BTNINFO.Name = "BTNINFO";
             this.BTNINFO.Size = new System.Drawing.Size(283, 61);
             this.BTNINFO.TabIndex = 25;
@@ -410,39 +433,14 @@
             // 
             // SubmenuConvertir
             // 
-            this.SubmenuConvertir.BackColor = System.Drawing.Color.White;
-            this.SubmenuConvertir.Controls.Add(this.BTNImprimir);
+            this.SubmenuConvertir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.SubmenuConvertir.Controls.Add(this.BTNPNG);
-            this.SubmenuConvertir.Controls.Add(this.BTNSVG);
             this.SubmenuConvertir.Controls.Add(this.BTNPDF);
             this.SubmenuConvertir.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubmenuConvertir.Location = new System.Drawing.Point(0, 410);
+            this.SubmenuConvertir.Location = new System.Drawing.Point(0, 368);
             this.SubmenuConvertir.Name = "SubmenuConvertir";
-            this.SubmenuConvertir.Size = new System.Drawing.Size(283, 188);
+            this.SubmenuConvertir.Size = new System.Drawing.Size(283, 98);
             this.SubmenuConvertir.TabIndex = 24;
-            // 
-            // BTNImprimir
-            // 
-            this.BTNImprimir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.BTNImprimir.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTNImprimir.FlatAppearance.BorderSize = 0;
-            this.BTNImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNImprimir.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNImprimir.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BTNImprimir.IconChar = FontAwesome.Sharp.IconChar.Print;
-            this.BTNImprimir.IconColor = System.Drawing.Color.Gainsboro;
-            this.BTNImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BTNImprimir.IconSize = 36;
-            this.BTNImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNImprimir.Location = new System.Drawing.Point(0, 141);
-            this.BTNImprimir.Name = "BTNImprimir";
-            this.BTNImprimir.Size = new System.Drawing.Size(283, 47);
-            this.BTNImprimir.TabIndex = 27;
-            this.BTNImprimir.Text = "Imprimir";
-            this.BTNImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BTNImprimir.UseVisualStyleBackColor = false;
-            this.BTNImprimir.Click += new System.EventHandler(this.BTNImprimir_Click);
             // 
             // BTNPNG
             // 
@@ -457,38 +455,15 @@
             this.BTNPNG.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BTNPNG.IconSize = 36;
             this.BTNPNG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNPNG.Location = new System.Drawing.Point(0, 94);
+            this.BTNPNG.Location = new System.Drawing.Point(0, 47);
             this.BTNPNG.Name = "BTNPNG";
             this.BTNPNG.Size = new System.Drawing.Size(283, 47);
             this.BTNPNG.TabIndex = 26;
-            this.BTNPNG.Text = "PNG";
+            this.BTNPNG.Text = "Imagen";
             this.BTNPNG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BTNPNG.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BTNPNG.UseVisualStyleBackColor = false;
             this.BTNPNG.Click += new System.EventHandler(this.BTNPNG_Click);
-            // 
-            // BTNSVG
-            // 
-            this.BTNSVG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.BTNSVG.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BTNSVG.FlatAppearance.BorderSize = 0;
-            this.BTNSVG.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTNSVG.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNSVG.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BTNSVG.IconChar = FontAwesome.Sharp.IconChar.FileSignature;
-            this.BTNSVG.IconColor = System.Drawing.Color.Gainsboro;
-            this.BTNSVG.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BTNSVG.IconSize = 36;
-            this.BTNSVG.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNSVG.Location = new System.Drawing.Point(0, 47);
-            this.BTNSVG.Name = "BTNSVG";
-            this.BTNSVG.Size = new System.Drawing.Size(283, 47);
-            this.BTNSVG.TabIndex = 25;
-            this.BTNSVG.Text = "SVG";
-            this.BTNSVG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNSVG.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BTNSVG.UseVisualStyleBackColor = false;
-            this.BTNSVG.Click += new System.EventHandler(this.BTNSVG_Click);
             // 
             // BTNPDF
             // 
@@ -526,7 +501,7 @@
             this.btnConvertir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConvertir.IconSize = 36;
             this.btnConvertir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConvertir.Location = new System.Drawing.Point(0, 349);
+            this.btnConvertir.Location = new System.Drawing.Point(0, 307);
             this.btnConvertir.Name = "btnConvertir";
             this.btnConvertir.Size = new System.Drawing.Size(283, 61);
             this.btnConvertir.TabIndex = 23;
@@ -539,59 +514,35 @@
             // SubmenuEditar
             // 
             this.SubmenuEditar.BackColor = System.Drawing.Color.White;
-            this.SubmenuEditar.Controls.Add(this.BtnDeshacer);
-            this.SubmenuEditar.Controls.Add(this.btnRehacer);
+            this.SubmenuEditar.Controls.Add(this.btneliminar);
             this.SubmenuEditar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.SubmenuEditar.Location = new System.Drawing.Point(0, 256);
+            this.SubmenuEditar.Location = new System.Drawing.Point(0, 255);
             this.SubmenuEditar.Name = "SubmenuEditar";
-            this.SubmenuEditar.Size = new System.Drawing.Size(283, 93);
+            this.SubmenuEditar.Size = new System.Drawing.Size(283, 52);
             this.SubmenuEditar.TabIndex = 22;
             // 
-            // BtnDeshacer
+            // btneliminar
             // 
-            this.BtnDeshacer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.BtnDeshacer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnDeshacer.FlatAppearance.BorderSize = 0;
-            this.BtnDeshacer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDeshacer.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnDeshacer.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnDeshacer.IconChar = FontAwesome.Sharp.IconChar.AngleLeft;
-            this.BtnDeshacer.IconColor = System.Drawing.Color.Gainsboro;
-            this.BtnDeshacer.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnDeshacer.IconSize = 36;
-            this.BtnDeshacer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDeshacer.Location = new System.Drawing.Point(0, 0);
-            this.BtnDeshacer.Name = "BtnDeshacer";
-            this.BtnDeshacer.Size = new System.Drawing.Size(283, 47);
-            this.BtnDeshacer.TabIndex = 23;
-            this.BtnDeshacer.Text = "Deshacer";
-            this.BtnDeshacer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDeshacer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnDeshacer.UseVisualStyleBackColor = false;
-            this.BtnDeshacer.Click += new System.EventHandler(this.BtnDeshacer_Click);
-            // 
-            // btnRehacer
-            // 
-            this.btnRehacer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnRehacer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnRehacer.FlatAppearance.BorderSize = 0;
-            this.btnRehacer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRehacer.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRehacer.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnRehacer.IconChar = FontAwesome.Sharp.IconChar.AngleRight;
-            this.btnRehacer.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnRehacer.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRehacer.IconSize = 36;
-            this.btnRehacer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRehacer.Location = new System.Drawing.Point(0, 46);
-            this.btnRehacer.Name = "btnRehacer";
-            this.btnRehacer.Size = new System.Drawing.Size(283, 47);
-            this.btnRehacer.TabIndex = 24;
-            this.btnRehacer.Text = "Rehacer";
-            this.btnRehacer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRehacer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRehacer.UseVisualStyleBackColor = false;
-            this.btnRehacer.Click += new System.EventHandler(this.btnRehacer_Click);
+            this.btneliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btneliminar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btneliminar.FlatAppearance.BorderSize = 0;
+            this.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btneliminar.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btneliminar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btneliminar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btneliminar.IconColor = System.Drawing.Color.Gainsboro;
+            this.btneliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btneliminar.IconSize = 36;
+            this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btneliminar.Location = new System.Drawing.Point(0, 0);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(283, 52);
+            this.btneliminar.TabIndex = 23;
+            this.btneliminar.Text = "Eliminar";
+            this.btneliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btneliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btneliminar.UseVisualStyleBackColor = false;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // btnEditar
             // 
@@ -606,7 +557,7 @@
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 36;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(0, 195);
+            this.btnEditar.Location = new System.Drawing.Point(0, 194);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(283, 61);
             this.btnEditar.TabIndex = 21;
@@ -624,7 +575,7 @@
             this.SubmenuArchivo.Dock = System.Windows.Forms.DockStyle.Top;
             this.SubmenuArchivo.Location = new System.Drawing.Point(0, 61);
             this.SubmenuArchivo.Name = "SubmenuArchivo";
-            this.SubmenuArchivo.Size = new System.Drawing.Size(283, 134);
+            this.SubmenuArchivo.Size = new System.Drawing.Size(283, 133);
             this.SubmenuArchivo.TabIndex = 20;
             // 
             // btnGuardar
@@ -696,35 +647,27 @@
             this.btnnuevo.UseVisualStyleBackColor = false;
             this.btnnuevo.Click += new System.EventHandler(this.btnnuevo_Click);
             // 
-            // hidden
+            // btnsettings
             // 
-            this.hidden.BackBrush = new MindFusion.Drawing.SolidBrush("#FFFFFFFF");
-            this.hidden.LinkBaseShapeSize = 12F;
-            this.hidden.LinkHeadShapeSize = 12F;
-            this.hidden.LinkIntermediateShapeSize = 12F;
-            this.hidden.MeasureUnit = MindFusion.Diagramming.MeasureUnit.Pixel;
-            this.hidden.RoutingOptions.GridSize = 16F;
-            this.hidden.RoutingOptions.NodeVicinitySize = 48F;
-            this.hidden.SelectAfterCreate = false;
-            this.hidden.ShapeNodeStyle.Brush = new MindFusion.Drawing.SolidBrush("#FF00BFFF");
-            this.hidden.TouchThreshold = 0F;
-            // 
-            // ContextMenu
-            // 
-            this.ContextMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-            this._menuItemDelete});
-            // 
-            // _menuItemDelete
-            // 
-            this._menuItemDelete.Index = 0;
-            this._menuItemDelete.Text = "Delete";
-            this._menuItemDelete.Click += new System.EventHandler(this.Delete);
+            this.btnsettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.btnsettings.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnsettings.IconChar = FontAwesome.Sharp.IconChar.Cog;
+            this.btnsettings.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnsettings.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnsettings.IconSize = 47;
+            this.btnsettings.Location = new System.Drawing.Point(1046, 21);
+            this.btnsettings.Name = "btnsettings";
+            this.btnsettings.Size = new System.Drawing.Size(53, 47);
+            this.btnsettings.TabIndex = 9;
+            this.btnsettings.TabStop = false;
+            this.btnsettings.Click += new System.EventHandler(this.btnsettings_Click);
             // 
             // Formprincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1398, 939);
+            this.ClientSize = new System.Drawing.Size(1387, 939);
+            this.MaximumSize = new System.Drawing.Size(1403, 978);
             this.Name = "Formprincipal";
             this.panelsidebar.ResumeLayout(false);
             this.paneltop.ResumeLayout(false);
@@ -732,7 +675,9 @@
             this.panelfill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ActualSeleccionbox)).EndInit();
             this.panelInvocarForms.ResumeLayout(false);
-            this.panelProperties.ResumeLayout(false);
+            this.PanelDIAGRAM.ResumeLayout(false);
+            this.panelAAAA.ResumeLayout(false);
+            this.pANELproperties.ResumeLayout(false);
             this.panelfig.ResumeLayout(false);
             this.TabCTR.ResumeLayout(false);
             this.Figuras.ResumeLayout(false);
@@ -744,6 +689,7 @@
             this.SubmenuConvertir.ResumeLayout(false);
             this.SubmenuEditar.ResumeLayout(false);
             this.SubmenuArchivo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnsettings)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -762,16 +708,12 @@
         private FontAwesome.Sharp.IconButton btnAbrir;
         private FontAwesome.Sharp.IconButton btnnuevo;
         private System.Windows.Forms.Panel SubmenuEditar;
-        private FontAwesome.Sharp.IconButton BtnDeshacer;
         private FontAwesome.Sharp.IconButton btnEditar;
-        private FontAwesome.Sharp.IconButton btnRehacer;
         private System.Windows.Forms.Panel SubmenuConvertir;
         private FontAwesome.Sharp.IconButton btnConvertir;
         private FontAwesome.Sharp.IconButton BTNPNG;
-        private FontAwesome.Sharp.IconButton BTNSVG;
         private FontAwesome.Sharp.IconButton BTNPDF;
         private FontAwesome.Sharp.IconButton BTNINFO;
-        private FontAwesome.Sharp.IconButton BTNImprimir;
         private System.Windows.Forms.Panel SubmenuInformacion;
         private FontAwesome.Sharp.IconButton BTNAcerca;
         public MindFusion.Diagramming.WinForms.DiagramView DiagramaVer;
@@ -783,12 +725,13 @@
         public System.Windows.Forms.TabPage Conectores;
         public System.Windows.Forms.ListBox lstFlechasConectors;
         public System.Windows.Forms.ComboBox CBMTipoFlechaConectors;
-        private System.Windows.Forms.Panel panelProperties;
+        private System.Windows.Forms.Panel panelAAAA;
         public System.Windows.Forms.PropertyGrid GridPropiedades;
         public System.Windows.Forms.OpenFileDialog OpenDialog;
         public System.Windows.Forms.SaveFileDialog SaveDialog;
-        public MindFusion.Diagramming.Diagram hidden;
-        public System.Windows.Forms.ContextMenu ContextMenu;
-        public System.Windows.Forms.MenuItem _menuItemDelete;
+        private FontAwesome.Sharp.IconPictureBox btnsettings;
+        private System.Windows.Forms.Panel PanelDIAGRAM;
+        private System.Windows.Forms.Panel pANELproperties;
+        private FontAwesome.Sharp.IconButton btneliminar;
     }
 }
