@@ -16,6 +16,7 @@ namespace Generador_Diagramas
 {
     public partial class FormVerImagen : InvocadoBase
     {
+        public bool editar = false;
         public FormVerImagen()
         {
             InitializeComponent();
@@ -29,7 +30,23 @@ namespace Generador_Diagramas
 
         private void FormVerImagen_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                if(editar == false)
+                {
+                    lbinactivo.Visible = true;
+                    btneditar.Visible = false;
+                }
+                else if(editar == true)
+                {
+                    lbinactivo.Visible = false;
+                    btneditar.Visible = true;
+                }
+            }
+            catch (Exception EQ)
+            {
+                FormError.Mensaje("HA OCURRIDO UN ERROR", EQ.Message);
+            }
         }
 
         private void btnguardar_Click(object sender, EventArgs e) //guarda un png si lo desea el user

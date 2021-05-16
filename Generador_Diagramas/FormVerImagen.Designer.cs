@@ -42,6 +42,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copiarTextoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btneditar = new FontAwesome.Sharp.IconButton();
+            this.lbinactivo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcitureImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -68,7 +69,7 @@
             this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnguardar.IconSize = 36;
             this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnguardar.Location = new System.Drawing.Point(788, 662);
+            this.btnguardar.Location = new System.Drawing.Point(788, 653);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(269, 61);
             this.btnguardar.TabIndex = 52;
@@ -103,7 +104,7 @@
             // 
             this.label4.Font = new System.Drawing.Font("Comfortaa", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(780, 73);
+            this.label4.Location = new System.Drawing.Point(782, 58);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(263, 52);
             this.label4.TabIndex = 55;
@@ -114,7 +115,7 @@
             this.lbnombre.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lbnombre.Font = new System.Drawing.Font("Comfortaa", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbnombre.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lbnombre.Location = new System.Drawing.Point(783, 125);
+            this.lbnombre.Location = new System.Drawing.Point(783, 110);
             this.lbnombre.Name = "lbnombre";
             this.lbnombre.Size = new System.Drawing.Size(267, 183);
             this.lbnombre.TabIndex = 56;
@@ -124,11 +125,12 @@
             // 
             this.label1.Font = new System.Drawing.Font("Comfortaa", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(787, 319);
+            this.label1.Location = new System.Drawing.Point(777, 300);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(263, 52);
+            this.label1.Size = new System.Drawing.Size(292, 68);
             this.label1.TabIndex = 57;
-            this.label1.Text = "Ruta de Guardado:";
+            this.label1.Text = "Ruta de Guardado: (Click Derecho Copiar Ruta)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbruta
             // 
@@ -173,11 +175,22 @@
             this.btneditar.Name = "btneditar";
             this.btneditar.Size = new System.Drawing.Size(269, 61);
             this.btneditar.TabIndex = 59;
-            this.btneditar.Text = "Editar";
+            this.btneditar.Text = "Editar Diagrama Mostrado";
             this.btneditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btneditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btneditar.UseVisualStyleBackColor = false;
             this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
+            // 
+            // lbinactivo
+            // 
+            this.lbinactivo.Font = new System.Drawing.Font("Comfortaa", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbinactivo.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lbinactivo.Location = new System.Drawing.Point(765, 726);
+            this.lbinactivo.Name = "lbinactivo";
+            this.lbinactivo.Size = new System.Drawing.Size(315, 112);
+            this.lbinactivo.TabIndex = 60;
+            this.lbinactivo.Text = "Al estar el Diagrama Desactivado No Podra Editarlo !";
+            this.lbinactivo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormVerImagen
             // 
@@ -185,6 +198,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(1092, 850);
+            this.Controls.Add(this.lbinactivo);
             this.Controls.Add(this.btneditar);
             this.Controls.Add(this.lbruta);
             this.Controls.Add(this.label1);
@@ -218,5 +232,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem copiarTextoToolStripMenuItem;
         private FontAwesome.Sharp.IconButton btneditar;
+        public System.Windows.Forms.Label lbinactivo;
     }
 }

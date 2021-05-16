@@ -46,7 +46,6 @@
             this.lstNODOList = new System.Windows.Forms.ListBox();
             this.Conectores = new System.Windows.Forms.TabPage();
             this.lstFlechasConectors = new System.Windows.Forms.ListBox();
-            this.CBMTipoFlechaConectors = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
@@ -301,7 +300,6 @@
             // 
             this.Conectores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
             this.Conectores.Controls.Add(this.lstFlechasConectors);
-            this.Conectores.Controls.Add(this.CBMTipoFlechaConectors);
             this.Conectores.Location = new System.Drawing.Point(4, 30);
             this.Conectores.Name = "Conectores";
             this.Conectores.Padding = new System.Windows.Forms.Padding(3);
@@ -316,27 +314,11 @@
             this.lstFlechasConectors.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.lstFlechasConectors.Location = new System.Drawing.Point(3, 3);
             this.lstFlechasConectors.Name = "lstFlechasConectors";
-            this.lstFlechasConectors.Size = new System.Drawing.Size(331, 345);
+            this.lstFlechasConectors.Size = new System.Drawing.Size(331, 374);
             this.lstFlechasConectors.TabIndex = 4;
             this.lstFlechasConectors.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstFlechasConectors_DrawItem);
             this.lstFlechasConectors.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.lstFlechasConectors_MeasureItem);
             this.lstFlechasConectors.SelectedIndexChanged += new System.EventHandler(this.lstFlechasConectors_SelectedIndexChanged);
-            // 
-            // CBMTipoFlechaConectors
-            // 
-            this.CBMTipoFlechaConectors.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.CBMTipoFlechaConectors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBMTipoFlechaConectors.Font = new System.Drawing.Font("Comfortaa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBMTipoFlechaConectors.Items.AddRange(new object[] {
-            "Linea Recta",
-            "Linea Curva",
-            "Linea Perpendicular"});
-            this.CBMTipoFlechaConectors.Location = new System.Drawing.Point(3, 348);
-            this.CBMTipoFlechaConectors.Name = "CBMTipoFlechaConectors";
-            this.CBMTipoFlechaConectors.Size = new System.Drawing.Size(331, 29);
-            this.CBMTipoFlechaConectors.TabIndex = 3;
-            this.CBMTipoFlechaConectors.Visible = false;
-            this.CBMTipoFlechaConectors.SelectedValueChanged += new System.EventHandler(this.CBMTipoFlechaConectors_SelectedValueChanged);
             // 
             // pictureBox1
             // 
@@ -724,7 +706,6 @@
         public System.Windows.Forms.ListBox lstNODOList;
         public System.Windows.Forms.TabPage Conectores;
         public System.Windows.Forms.ListBox lstFlechasConectors;
-        public System.Windows.Forms.ComboBox CBMTipoFlechaConectors;
         private System.Windows.Forms.Panel panelAAAA;
         public System.Windows.Forms.PropertyGrid GridPropiedades;
         public System.Windows.Forms.OpenFileDialog OpenDialog;

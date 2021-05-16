@@ -32,6 +32,7 @@
             this.paneltop = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelInvocarForms = new System.Windows.Forms.Panel();
@@ -47,10 +48,8 @@
             this.lstNODOList = new System.Windows.Forms.ListBox();
             this.Conectores = new System.Windows.Forms.TabPage();
             this.lstFlechasConectors = new System.Windows.Forms.ListBox();
-            this.CBMTipoFlechaConectors = new System.Windows.Forms.ComboBox();
             this.BTNELIMINAR = new FontAwesome.Sharp.IconButton();
             this.BTNGUARDAR = new FontAwesome.Sharp.IconButton();
-            this.label4 = new System.Windows.Forms.Label();
             this.paneltop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -100,6 +99,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1475, 844);
             this.panel2.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Comfortaa", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.Location = new System.Drawing.Point(1156, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(253, 44);
+            this.label4.TabIndex = 50;
+            this.label4.Text = "Editar Diagrama";
             // 
             // txtnombre
             // 
@@ -246,7 +256,6 @@
             // 
             this.Conectores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(243)))), ((int)(((byte)(239)))));
             this.Conectores.Controls.Add(this.lstFlechasConectors);
-            this.Conectores.Controls.Add(this.CBMTipoFlechaConectors);
             this.Conectores.Location = new System.Drawing.Point(4, 30);
             this.Conectores.Name = "Conectores";
             this.Conectores.Padding = new System.Windows.Forms.Padding(3);
@@ -261,26 +270,11 @@
             this.lstFlechasConectors.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.lstFlechasConectors.Location = new System.Drawing.Point(3, 3);
             this.lstFlechasConectors.Name = "lstFlechasConectors";
-            this.lstFlechasConectors.Size = new System.Drawing.Size(331, 345);
+            this.lstFlechasConectors.Size = new System.Drawing.Size(331, 374);
             this.lstFlechasConectors.TabIndex = 4;
             this.lstFlechasConectors.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lstFlechasConectors_DrawItem);
             this.lstFlechasConectors.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.lstFlechasConectors_MeasureItem);
             this.lstFlechasConectors.SelectedIndexChanged += new System.EventHandler(this.lstFlechasConectors_SelectedIndexChanged);
-            // 
-            // CBMTipoFlechaConectors
-            // 
-            this.CBMTipoFlechaConectors.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.CBMTipoFlechaConectors.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBMTipoFlechaConectors.Font = new System.Drawing.Font("Comfortaa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBMTipoFlechaConectors.Items.AddRange(new object[] {
-            "Linea Recta",
-            "Linea Curva",
-            "Linea Perpendicular"});
-            this.CBMTipoFlechaConectors.Location = new System.Drawing.Point(3, 348);
-            this.CBMTipoFlechaConectors.Name = "CBMTipoFlechaConectors";
-            this.CBMTipoFlechaConectors.Size = new System.Drawing.Size(331, 29);
-            this.CBMTipoFlechaConectors.TabIndex = 3;
-            this.CBMTipoFlechaConectors.Visible = false;
             // 
             // BTNELIMINAR
             // 
@@ -320,22 +314,11 @@
             this.BTNGUARDAR.Name = "BTNGUARDAR";
             this.BTNGUARDAR.Size = new System.Drawing.Size(215, 61);
             this.BTNGUARDAR.TabIndex = 20;
-            this.BTNGUARDAR.Text = "Guardar";
+            this.BTNGUARDAR.Text = "Guardar Diagrama";
             this.BTNGUARDAR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BTNGUARDAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BTNGUARDAR.UseVisualStyleBackColor = false;
             this.BTNGUARDAR.Click += new System.EventHandler(this.BTNGUARDAR_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Comfortaa", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label4.Location = new System.Drawing.Point(1156, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(253, 44);
-            this.label4.TabIndex = 50;
-            this.label4.Text = "Editar Diagrama";
             // 
             // FormEditDiagram
             // 
@@ -382,7 +365,6 @@
         public System.Windows.Forms.ListBox lstNODOList;
         public System.Windows.Forms.TabPage Conectores;
         public System.Windows.Forms.ListBox lstFlechasConectors;
-        public System.Windows.Forms.ComboBox CBMTipoFlechaConectors;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtnombre;

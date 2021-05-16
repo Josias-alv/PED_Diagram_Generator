@@ -55,13 +55,13 @@
             this.VERACT = new System.Windows.Forms.DataGridViewImageColumn();
             this.DESACTIVAR = new System.Windows.Forms.DataGridViewImageColumn();
             this.tbInactivos = new System.Windows.Forms.TabPage();
+            this.btnRefreshdeact = new FontAwesome.Sharp.IconButton();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.Grid_Desactivado = new System.Windows.Forms.DataGridView();
-            this.btnRefreshdeact = new FontAwesome.Sharp.IconButton();
             this.VERDEACT = new System.Windows.Forms.DataGridViewImageColumn();
             this.ACTIVAR = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
@@ -120,6 +120,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1066, 517);
             this.tabControl1.TabIndex = 98;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tbAllDiagrams
             // 
@@ -400,6 +401,28 @@
             this.tbInactivos.TabIndex = 2;
             this.tbInactivos.Text = "Diagramas Inactivos";
             // 
+            // btnRefreshdeact
+            // 
+            this.btnRefreshdeact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.btnRefreshdeact.FlatAppearance.BorderSize = 0;
+            this.btnRefreshdeact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshdeact.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshdeact.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnRefreshdeact.IconChar = FontAwesome.Sharp.IconChar.Retweet;
+            this.btnRefreshdeact.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnRefreshdeact.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRefreshdeact.IconSize = 36;
+            this.btnRefreshdeact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefreshdeact.Location = new System.Drawing.Point(891, 17);
+            this.btnRefreshdeact.Name = "btnRefreshdeact";
+            this.btnRefreshdeact.Size = new System.Drawing.Size(132, 61);
+            this.btnRefreshdeact.TabIndex = 61;
+            this.btnRefreshdeact.Text = "Refresh";
+            this.btnRefreshdeact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefreshdeact.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRefreshdeact.UseVisualStyleBackColor = false;
+            this.btnRefreshdeact.Click += new System.EventHandler(this.btnRefreshdeact_Click);
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -487,28 +510,6 @@
             this.Grid_Desactivado.Size = new System.Drawing.Size(1058, 356);
             this.Grid_Desactivado.TabIndex = 55;
             this.Grid_Desactivado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_Desactivado_CellContentClick);
-            // 
-            // btnRefreshdeact
-            // 
-            this.btnRefreshdeact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.btnRefreshdeact.FlatAppearance.BorderSize = 0;
-            this.btnRefreshdeact.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefreshdeact.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefreshdeact.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnRefreshdeact.IconChar = FontAwesome.Sharp.IconChar.Retweet;
-            this.btnRefreshdeact.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnRefreshdeact.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnRefreshdeact.IconSize = 36;
-            this.btnRefreshdeact.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefreshdeact.Location = new System.Drawing.Point(891, 17);
-            this.btnRefreshdeact.Name = "btnRefreshdeact";
-            this.btnRefreshdeact.Size = new System.Drawing.Size(132, 61);
-            this.btnRefreshdeact.TabIndex = 61;
-            this.btnRefreshdeact.Text = "Refresh";
-            this.btnRefreshdeact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefreshdeact.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRefreshdeact.UseVisualStyleBackColor = false;
-            this.btnRefreshdeact.Click += new System.EventHandler(this.btnRefreshdeact_Click);
             // 
             // VERDEACT
             // 

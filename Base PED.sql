@@ -84,7 +84,7 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE SP_VERDIAGRAM(IN IDUSER INT,IN STATUSDES boolean)
 BEGIN
-SELECT ID_Diagrama,Nombre,ArchivoJson,ArchivoPNG,Ruta,Fecha_Creacion FROM Diagramas_Generados WHERE ID_Usuario = IDUSER AND Status_Activo = STATUSDES;
+SELECT ID_Diagrama,Nombre,ArchivoJson,ArchivoPNG,Ruta,Fecha_Creacion,Status_Activo FROM Diagramas_Generados WHERE ID_Usuario = IDUSER AND Status_Activo = STATUSDES;
 END
 $$ 
 DELIMITER ;
@@ -92,7 +92,7 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE SP_TODOSDIAGRAMS(IN IDUSER INT)
 BEGIN
-SELECT ID_Diagrama,Nombre,ArchivoJson,ArchivoPNG,Ruta,Fecha_Creacion FROM Diagramas_Generados WHERE ID_Usuario = IDUSER;
+SELECT ID_Diagrama,Nombre,ArchivoJson,ArchivoPNG,Ruta,Fecha_Creacion,Status_Activo FROM Diagramas_Generados WHERE ID_Usuario = IDUSER;
 END
 $$ 
 DELIMITER ;

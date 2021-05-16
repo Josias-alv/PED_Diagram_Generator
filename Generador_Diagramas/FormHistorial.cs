@@ -43,6 +43,7 @@ namespace Generador_Diagramas
             GRIDDIAGRAMALL.Columns["ID_Diagrama"].Visible = false;
             GRIDDIAGRAMALL.Columns["ArchivoPNG"].Visible = false;
             GRIDDIAGRAMALL.Columns["ArchivoJson"].Visible = false;
+            GRIDDIAGRAMALL.Columns["Status_Activo"].Visible = false;
             GRIDDIAGRAMALL.Columns["VER"].DisplayIndex = 6;
             GRIDDIAGRAMALL.ClearSelection();
         }
@@ -51,6 +52,7 @@ namespace Generador_Diagramas
             GRID_ACTIVO.Columns["ID_Diagrama"].Visible = false;
             GRID_ACTIVO.Columns["ArchivoPNG"].Visible = false;
             GRID_ACTIVO.Columns["ArchivoJson"].Visible = false;
+            GRID_ACTIVO.Columns["Status_Activo"].Visible = false;
             GRID_ACTIVO.Columns["VERACT"].DisplayIndex =7;
             GRID_ACTIVO.Columns["DESACTIVAR"].DisplayIndex = 7;
             GRID_ACTIVO.ClearSelection();
@@ -60,6 +62,7 @@ namespace Generador_Diagramas
             Grid_Desactivado.Columns["ID_Diagrama"].Visible = false;
             Grid_Desactivado.Columns["ArchivoPNG"].Visible = false;
             Grid_Desactivado.Columns["ArchivoJson"].Visible = false;
+            Grid_Desactivado.Columns["Status_Activo"].Visible = false;
             Grid_Desactivado.Columns["VERDEACT"].DisplayIndex = 7;
             Grid_Desactivado.Columns["ACTIVAR"].DisplayIndex = 7;
         }
@@ -108,6 +111,7 @@ namespace Generador_Diagramas
                     FormVerImagen F = new FormVerImagen();
                     FormEditDiagram.ID_Diagrama = Convert.ToInt32(GRIDDIAGRAMALL.Rows[e.RowIndex].Cells["ID_Diagrama"].Value);//id del diagrama
                     FormEditDiagram.DiagramaEditar = GRIDDIAGRAMALL.Rows[e.RowIndex].Cells["ArchivoJson"].Value.ToString();
+                    F.editar = Convert.ToBoolean(GRIDDIAGRAMALL.Rows[e.RowIndex].Cells["Status_Activo"].Value.ToString());
                     F.lbnombre.Text = GRIDDIAGRAMALL.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
                     F.lbruta.Text = GRIDDIAGRAMALL.Rows[e.RowIndex].Cells["Ruta"].Value.ToString();
                     byte[] byt = neg.TraerIMGMYSQL(Convert.ToInt32(GRIDDIAGRAMALL.Rows[e.RowIndex].Cells["ID_Diagrama"].Value)); //TRAE el img por id
@@ -142,6 +146,7 @@ namespace Generador_Diagramas
                     FormVerImagen F = new FormVerImagen();
                     FormEditDiagram.ID_Diagrama = Convert.ToInt32(GRID_ACTIVO.Rows[e.RowIndex].Cells["ID_Diagrama"].Value);//id del diagrama
                     FormEditDiagram.DiagramaEditar = GRID_ACTIVO.Rows[e.RowIndex].Cells["ArchivoJson"].Value.ToString();
+                    F.editar = Convert.ToBoolean(GRID_ACTIVO.Rows[e.RowIndex].Cells["Status_Activo"].Value.ToString());
                     F.lbnombre.Text = GRID_ACTIVO.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
                     F.lbruta.Text = GRID_ACTIVO.Rows[e.RowIndex].Cells["Ruta"].Value.ToString();
                     byte[] byt = neg.TraerIMGMYSQL(Convert.ToInt32(GRID_ACTIVO.Rows[e.RowIndex].Cells["ID_Diagrama"].Value)); //TRAE el img por id
@@ -184,6 +189,7 @@ namespace Generador_Diagramas
                     FormVerImagen F = new FormVerImagen();
                     FormEditDiagram.ID_Diagrama = Convert.ToInt32(Grid_Desactivado.Rows[e.RowIndex].Cells["ID_Diagrama"].Value); //id del diagrama
                     FormEditDiagram.DiagramaEditar = Grid_Desactivado.Rows[e.RowIndex].Cells["ArchivoJson"].Value.ToString();
+                    F.editar = Convert.ToBoolean(Grid_Desactivado.Rows[e.RowIndex].Cells["Status_Activo"].Value.ToString());
                     F.lbnombre.Text = Grid_Desactivado.Rows[e.RowIndex].Cells["Nombre"].Value.ToString();
                     F.lbruta.Text = Grid_Desactivado.Rows[e.RowIndex].Cells["Ruta"].Value.ToString();
                     byte[] byt = neg.TraerIMGMYSQL(Convert.ToInt32(Grid_Desactivado.Rows[e.RowIndex].Cells["ID_Diagrama"].Value)); //TRAE el img por id
@@ -209,6 +215,16 @@ namespace Generador_Diagramas
             {
                 FormError.Mensaje("HA OCURRIDO UN ERROR", EQ.Message);
             }
+        }
+
+        private void tabControl1_Selected(object sender, TabControlEventArgs e)
+        {
+            if(tabControl1.SelectedTab.Name == "tbAllDiagrams") //refrescando cuando se cambia de tab los grid
+                MostrarTodos(FormLogin.ID_Usuario);
+            if (tabControl1.SelectedTab.Name == "tbActivo")
+                MostrarACT(FormLogin.ID_Usuario);
+            if (tabControl1.SelectedTab.Name == "tbInactivos")
+                MostrarDeact(FormLogin.ID_Usuario);
         }
     }
 }
