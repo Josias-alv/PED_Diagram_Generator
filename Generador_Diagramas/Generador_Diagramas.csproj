@@ -127,6 +127,12 @@
     <Compile Include="FormCambioPassword.Designer.cs">
       <DependentUpon>FormCambioPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConfirmDesactivar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfirmDesactivar.Designer.cs">
+      <DependentUpon>FormConfirmDesactivar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditDiagram.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCambioPassword.resx">
       <DependentUpon>FormCambioPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfirmDesactivar.resx">
+      <DependentUpon>FormConfirmDesactivar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditDiagram.resx">
       <DependentUpon>FormEditDiagram.cs</DependentUpon>

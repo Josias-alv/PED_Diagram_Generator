@@ -54,6 +54,7 @@ namespace Capa_Entidades
         public string Ruta { get; set; }
         public DateTime Fecha { get; set; }
         public bool Status { get; set; }
+        public DateTime FechaEdicion { get; set; }
 
     }
 

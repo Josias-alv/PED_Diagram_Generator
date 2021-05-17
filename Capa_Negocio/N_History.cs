@@ -37,5 +37,9 @@ namespace Capa_Negocio
         {
             data.EditarDiagrama(sender);
         }
+        public void EditDiagramConRuta(E_Diagramas sender)
+        {
+            data.EditarDiagramaConRuta(sender);
+        }
     }
 }

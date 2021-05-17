@@ -166,6 +166,7 @@ namespace Generador_Diagramas
 
             shape.Text = Seleccionado.Texto;
             shape.Font = Seleccionado.Fuente;
+            shape.TextBrush = new MindFusion.Drawing.SolidBrush(Seleccionado.ColorFuente);
             shape.Brush = new MindFusion.Drawing.SolidBrush(Seleccionado.Relleno);
             shape.Weight = Seleccionado.Duracion; // es el peso asignado a cada nodo
             cmd.Execute();
@@ -179,6 +180,7 @@ namespace Generador_Diagramas
                 Seleccionado = new NodoPropiedades();
                 Seleccionado.Texto = nodo.Text;
                 Seleccionado.Fuente = nodo.EffectiveFont;
+                Seleccionado.ColorFuente = (nodo.EffectiveTextBrush as MindFusion.Drawing.SolidBrush).Color;
                 Seleccionado.Relleno = (nodo.EffectiveBrush as MindFusion.Drawing.SolidBrush).Color;
                 Seleccionado.Duracion = Convert.ToInt32(nodo.Weight);
                 GRID.SelectedObject = Seleccionado; //pasando la info actual del nodo al property grid
@@ -251,6 +253,7 @@ namespace Generador_Diagramas
         {
             try
             {
+                string TODAY = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
                 Image img = Diagrama.CreateImage();
                 byte[] image = E_Imagen.ImageToByte(img);
                 E_Diagramas entities = new E_Diagramas();
@@ -258,6 +261,7 @@ namespace Generador_Diagramas
                 entities.Nombre = Nombre;
                 entities.archivoJson = Diagrama.SaveToJson(); //nos da un string en formato json que guarda el diagrama con sus datos
                 entities.ArchivoPNG = image.ToArray();
+                entities.FechaEdicion = Convert.ToDateTime(TODAY);
                 neg.EditarDiagramaMYSQL(entities); //nos ayuda a editar el diagrama
                 FormCompletado.Mensaje("ACTIVIDAD REALIZADA", "EL REGISTRO SE HA EDITADO CORRECTAMENTE...");
                 img.Dispose();//LIBERA RECURSOS
@@ -266,6 +270,37 @@ namespace Generador_Diagramas
             {
                 FormError.Mensaje("ERROR", ex.Message);
             }
+        }
+        public void EditarDiagramaConRuta(ref Diagram Diagrama, string Nombre, int iddiagrama, ref SaveFileDialog SAVE) //con modificar su ruta
+        {
+            SAVE.DefaultExt = "idg";//extension personalizada
+            SAVE.Filter = "Diagram files|*.idg";
+            if(SAVE.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string nombreruta = System.IO.Path.GetDirectoryName(SAVE.FileName);
+                    string TODAY = DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss");
+                    Diagrama.SaveToFile(SAVE.FileName, true);
+                    Image img = Diagrama.CreateImage();
+                    byte[] image = E_Imagen.ImageToByte(img);
+                    E_Diagramas entities = new E_Diagramas();
+                    entities.Id_Diagrama = iddiagrama;
+                    entities.Nombre = Nombre;
+                    entities.archivoJson = Diagrama.SaveToJson(); //nos da un string en formato json que guarda el diagrama con sus datos
+                    entities.ArchivoPNG = image.ToArray();
+                    entities.Ruta = nombreruta;
+                    entities.FechaEdicion = Convert.ToDateTime(TODAY);
+                    neg.EditDiagramConRuta(entities); //nos ayuda a editar el diagrama
+                    FormCompletado.Mensaje("ACTIVIDAD REALIZADA", "EL REGISTRO SE HA EDITADO Y GUARDADO CORRECTAMENTE...");
+                    img.Dispose();//LIBERA RECURSOS
+                }
+                catch (Exception ex)
+                {
+                    FormError.Mensaje("ERROR", ex.Message);
+                }
+            }
+           
         }
  
         public void ConvertPDF(ref SaveFileDialog SAVE, ref MindFusion.Diagramming.WinForms.DiagramView DiagramaVer)

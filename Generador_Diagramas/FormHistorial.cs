@@ -44,7 +44,7 @@ namespace Generador_Diagramas
             GRIDDIAGRAMALL.Columns["ArchivoPNG"].Visible = false;
             GRIDDIAGRAMALL.Columns["ArchivoJson"].Visible = false;
             GRIDDIAGRAMALL.Columns["Status_Activo"].Visible = false;
-            GRIDDIAGRAMALL.Columns["VER"].DisplayIndex = 6;
+            GRIDDIAGRAMALL.Columns["VER"].DisplayIndex = 8;
             GRIDDIAGRAMALL.ClearSelection();
         }
         void accionestablaact()
@@ -53,8 +53,8 @@ namespace Generador_Diagramas
             GRID_ACTIVO.Columns["ArchivoPNG"].Visible = false;
             GRID_ACTIVO.Columns["ArchivoJson"].Visible = false;
             GRID_ACTIVO.Columns["Status_Activo"].Visible = false;
-            GRID_ACTIVO.Columns["VERACT"].DisplayIndex =7;
-            GRID_ACTIVO.Columns["DESACTIVAR"].DisplayIndex = 7;
+            GRID_ACTIVO.Columns["VERACT"].DisplayIndex =9;
+            GRID_ACTIVO.Columns["DESACTIVAR"].DisplayIndex = 9;
             GRID_ACTIVO.ClearSelection();
         }
         void accionestabladeact()
@@ -63,8 +63,8 @@ namespace Generador_Diagramas
             Grid_Desactivado.Columns["ArchivoPNG"].Visible = false;
             Grid_Desactivado.Columns["ArchivoJson"].Visible = false;
             Grid_Desactivado.Columns["Status_Activo"].Visible = false;
-            Grid_Desactivado.Columns["VERDEACT"].DisplayIndex = 7;
-            Grid_Desactivado.Columns["ACTIVAR"].DisplayIndex = 7;
+            Grid_Desactivado.Columns["VERDEACT"].DisplayIndex = 9;
+            Grid_Desactivado.Columns["ACTIVAR"].DisplayIndex = 9;
         }
         //cargando datos a la s GRID
         void MostrarTodos(int iduser)

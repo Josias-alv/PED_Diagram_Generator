@@ -91,6 +91,14 @@ namespace Capa_Entidades
             get { return _Fuente; }
             set { _Fuente = value; }
         }
+        private Color _Color_Fuente;
+        [Description("Sera el color del Texto...")]
+        [Category("Propiedades")]
+        public Color ColorFuente
+        {
+            get { return _Color_Fuente; }
+            set { _Color_Fuente = value; }
+        }
         private Color _Relleno;
         [Description("El color del relleno del nodo...")]
         [Category("Propiedades")]

@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegister));
             this.label6 = new System.Windows.Forms.Label();
             this.btnregister = new FontAwesome.Sharp.IconButton();
-            this.txtpasregister = new System.Windows.Forms.TextBox();
             this.txtuserregister = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtpasconfirm = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtpasregister = new System.Windows.Forms.TextBox();
+            this.txtpasconfirm = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,27 +72,15 @@
             this.btnregister.UseVisualStyleBackColor = false;
             this.btnregister.Click += new System.EventHandler(this.btnregister_Click);
             // 
-            // txtpasregister
-            // 
-            this.txtpasregister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtpasregister.Font = new System.Drawing.Font("Comfortaa", 12F);
-            this.txtpasregister.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtpasregister.Location = new System.Drawing.Point(95, 229);
-            this.txtpasregister.Multiline = true;
-            this.txtpasregister.Name = "txtpasregister";
-            this.txtpasregister.Size = new System.Drawing.Size(335, 39);
-            this.txtpasregister.TabIndex = 35;
-            this.txtpasregister.UseSystemPasswordChar = true;
-            // 
             // txtuserregister
             // 
             this.txtuserregister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.txtuserregister.Font = new System.Drawing.Font("Comfortaa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtuserregister.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtuserregister.Location = new System.Drawing.Point(95, 140);
+            this.txtuserregister.Location = new System.Drawing.Point(38, 140);
             this.txtuserregister.Multiline = true;
             this.txtuserregister.Name = "txtuserregister";
-            this.txtuserregister.Size = new System.Drawing.Size(335, 42);
+            this.txtuserregister.Size = new System.Drawing.Size(459, 42);
             this.txtuserregister.TabIndex = 32;
             // 
             // label4
@@ -117,18 +105,6 @@
             this.label5.TabIndex = 33;
             this.label5.Text = "Usuario: (Correo)";
             // 
-            // txtpasconfirm
-            // 
-            this.txtpasconfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.txtpasconfirm.Font = new System.Drawing.Font("Comfortaa", 12F);
-            this.txtpasconfirm.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.txtpasconfirm.Location = new System.Drawing.Point(95, 330);
-            this.txtpasconfirm.Multiline = true;
-            this.txtpasconfirm.Name = "txtpasconfirm";
-            this.txtpasconfirm.Size = new System.Drawing.Size(335, 39);
-            this.txtpasconfirm.TabIndex = 39;
-            this.txtpasconfirm.UseSystemPasswordChar = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -151,18 +127,40 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // txtpasregister
+            // 
+            this.txtpasregister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtpasregister.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpasregister.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.txtpasregister.Location = new System.Drawing.Point(38, 229);
+            this.txtpasregister.Name = "txtpasregister";
+            this.txtpasregister.Size = new System.Drawing.Size(459, 40);
+            this.txtpasregister.TabIndex = 58;
+            this.txtpasregister.UseSystemPasswordChar = true;
+            // 
+            // txtpasconfirm
+            // 
+            this.txtpasconfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.txtpasconfirm.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpasconfirm.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.txtpasconfirm.Location = new System.Drawing.Point(38, 328);
+            this.txtpasconfirm.Name = "txtpasconfirm";
+            this.txtpasconfirm.Size = new System.Drawing.Size(459, 40);
+            this.txtpasconfirm.TabIndex = 59;
+            this.txtpasconfirm.UseSystemPasswordChar = true;
+            // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(524, 484);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txtpasconfirm);
+            this.Controls.Add(this.txtpasregister);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnregister);
-            this.Controls.Add(this.txtpasregister);
             this.Controls.Add(this.txtuserregister);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -178,12 +176,12 @@
 
         private System.Windows.Forms.Label label6;
         private FontAwesome.Sharp.IconButton btnregister;
-        private System.Windows.Forms.TextBox txtpasregister;
         private System.Windows.Forms.TextBox txtuserregister;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtpasconfirm;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox txtpasregister;
+        private System.Windows.Forms.TextBox txtpasconfirm;
     }
 }

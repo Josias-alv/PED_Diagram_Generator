@@ -158,6 +158,30 @@ namespace Capa_Datos
                 cmd.Parameters.AddWithValue("NOMBRE", SENDER.Nombre);
                 cmd.Parameters.AddWithValue("ARCHIVOJSON", SENDER.archivoJson);
                 cmd.Parameters.AddWithValue("ARCHIVOPNG", SENDER.ArchivoPNG);
+                cmd.Parameters.AddWithValue("FECHAEDICION", SENDER.FechaEdicion);
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+        public void EditarDiagramaConRuta(E_Diagramas SENDER)
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("SP_EDITARDIAGRAMACONRUTA", conexion);
+                cmd.CommandType = CommandType.StoredProcedure;
+                conexion.Open();
+                cmd.Parameters.AddWithValue("IDDIGRAM", SENDER.Id_Diagrama);
+                cmd.Parameters.AddWithValue("NOMBRE", SENDER.Nombre);
+                cmd.Parameters.AddWithValue("ARCHIVOJSON", SENDER.archivoJson);
+                cmd.Parameters.AddWithValue("ARCHIVOPNG", SENDER.ArchivoPNG);
+                cmd.Parameters.AddWithValue("RUTA", SENDER.Ruta);
+                cmd.Parameters.AddWithValue("FECHAEDICION", SENDER.FechaEdicion);
                 cmd.ExecuteNonQuery();
             }
             finally

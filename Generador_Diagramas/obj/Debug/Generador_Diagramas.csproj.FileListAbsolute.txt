@@ -64,3 +64,4 @@ C:\Users\josia\Desktop\Generador_Diagramas\Generador_Diagramas\obj\Debug\Generad
 C:\Users\josia\Desktop\Generador_Diagramas\Generador_Diagramas\obj\Debug\Generador_Diagramas.FormHistorial.resources
 C:\Users\josia\Desktop\Generador_Diagramas\Generador_Diagramas\obj\Debug\Generador_Diagramas.FormVerImagen.resources
 C:\Users\josia\Desktop\Generador_Diagramas\Generador_Diagramas\obj\Debug\Generador_Diagramas.FormEditDiagram.resources
+C:\Users\josia\Desktop\Generador_Diagramas\Generador_Diagramas\obj\Debug\Generador_Diagramas.FormConfirmDesactivar.resources

@@ -52,8 +52,30 @@ namespace Generador_Diagramas
                 }
                 else
                 {
-                    Process.EditarDiagramaMYSQL(ref diagram1, txtnombre.Text,ID_Diagrama);
-                    this.Close();
+                    //comentando una prueba acerca de algo, pero en el camino me di cuenta que no tiene mucho sentido
+                    //DialogResult result1 = new DialogResult();
+                    //FormPregunta form = new FormPregunta("PREGUNTA SERIA..", "¿ DESEA QUE ESTE ARCHIVO SE GUARDE COMO EDICION (CANCELAR) O COMO UNO NUEVO DESDE 0 (ACEPTAR) ?, ");
+                    //result1 = form.ShowDialog();
+                    //if(result1 == DialogResult.OK)
+                    //{
+                    //    Process.GuardarARCH(ref GUARDARDIALOG, ref diagram1);
+                    //}
+                    //else
+                    //{
+                        DialogResult result = new DialogResult();
+                        FormPregunta of = new FormPregunta("PREGUNTA SERIA..", "ADEMAS DE EDITAR, ¿ DESEA GUARDAR ESTE ARCHIVO EDITADO EN SU COMPUTADORA ?");
+                        result = of.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            Process.EditarDiagramaConRuta(ref diagram1, txtnombre.Text, ID_Diagrama, ref GUARDARDIALOG);
+                            this.Close();
+                        }
+                        else
+                        {
+                            Process.EditarDiagramaMYSQL(ref diagram1, txtnombre.Text, ID_Diagrama);
+                            this.Close();
+                        }
+                    //}
                 }
                 
             }

@@ -37,6 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbAllDiagrams = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
             this.btnrefreshtodos = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.GRIDDIAGRAMALL = new System.Windows.Forms.DataGridView();
             this.VER = new System.Windows.Forms.DataGridViewImageColumn();
             this.tbActivo = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.BTNREFRESHACT = new FontAwesome.Sharp.IconButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,6 +57,7 @@
             this.VERACT = new System.Windows.Forms.DataGridViewImageColumn();
             this.DESACTIVAR = new System.Windows.Forms.DataGridViewImageColumn();
             this.tbInactivos = new System.Windows.Forms.TabPage();
+            this.label18 = new System.Windows.Forms.Label();
             this.btnRefreshdeact = new FontAwesome.Sharp.IconButton();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -125,6 +128,7 @@
             // tbAllDiagrams
             // 
             this.tbAllDiagrams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tbAllDiagrams.Controls.Add(this.label16);
             this.tbAllDiagrams.Controls.Add(this.btnrefreshtodos);
             this.tbAllDiagrams.Controls.Add(this.label5);
             this.tbAllDiagrams.Controls.Add(this.label3);
@@ -137,6 +141,16 @@
             this.tbAllDiagrams.Size = new System.Drawing.Size(1058, 485);
             this.tbAllDiagrams.TabIndex = 0;
             this.tbAllDiagrams.Text = "Todos Los Diagramas";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label16.Location = new System.Drawing.Point(682, 90);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(113, 19);
+            this.label16.TabIndex = 49;
+            this.label16.Text = "Ultima Edicion";
             // 
             // btnrefreshtodos
             // 
@@ -164,7 +178,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Location = new System.Drawing.Point(903, 90);
+            this.label5.Location = new System.Drawing.Point(914, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(33, 19);
             this.label5.TabIndex = 47;
@@ -174,7 +188,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Location = new System.Drawing.Point(604, 90);
+            this.label3.Location = new System.Drawing.Point(454, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 19);
             this.label3.TabIndex = 46;
@@ -184,7 +198,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Location = new System.Drawing.Point(290, 90);
+            this.label2.Location = new System.Drawing.Point(230, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 19);
             this.label2.TabIndex = 45;
@@ -247,6 +261,7 @@
             // tbActivo
             // 
             this.tbActivo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tbActivo.Controls.Add(this.label17);
             this.tbActivo.Controls.Add(this.label10);
             this.tbActivo.Controls.Add(this.BTNREFRESHACT);
             this.tbActivo.Controls.Add(this.label6);
@@ -261,11 +276,21 @@
             this.tbActivo.TabIndex = 1;
             this.tbActivo.Text = "Diagramas Activos";
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label17.Location = new System.Drawing.Point(579, 95);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(113, 19);
+            this.label17.TabIndex = 55;
+            this.label17.Text = "Ultima Edicion";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label10.Location = new System.Drawing.Point(898, 95);
+            this.label10.Location = new System.Drawing.Point(932, 95);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(87, 19);
             this.label10.TabIndex = 54;
@@ -297,7 +322,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Location = new System.Drawing.Point(738, 95);
+            this.label6.Location = new System.Drawing.Point(783, 95);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 19);
             this.label6.TabIndex = 52;
@@ -307,7 +332,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.Location = new System.Drawing.Point(476, 95);
+            this.label7.Location = new System.Drawing.Point(368, 95);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(144, 19);
             this.label7.TabIndex = 51;
@@ -317,7 +342,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label8.Location = new System.Drawing.Point(231, 95);
+            this.label8.Location = new System.Drawing.Point(191, 95);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(139, 19);
             this.label8.TabIndex = 50;
@@ -388,6 +413,7 @@
             // tbInactivos
             // 
             this.tbInactivos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.tbInactivos.Controls.Add(this.label18);
             this.tbInactivos.Controls.Add(this.btnRefreshdeact);
             this.tbInactivos.Controls.Add(this.label11);
             this.tbInactivos.Controls.Add(this.label12);
@@ -400,6 +426,16 @@
             this.tbInactivos.Size = new System.Drawing.Size(1058, 485);
             this.tbInactivos.TabIndex = 2;
             this.tbInactivos.Text = "Diagramas Inactivos";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label18.Location = new System.Drawing.Point(571, 94);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(113, 19);
+            this.label18.TabIndex = 62;
+            this.label18.Text = "Ultima Edicion";
             // 
             // btnRefreshdeact
             // 
@@ -427,7 +463,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label11.Location = new System.Drawing.Point(912, 94);
+            this.label11.Location = new System.Drawing.Point(937, 94);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 19);
             this.label11.TabIndex = 60;
@@ -437,7 +473,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label12.Location = new System.Drawing.Point(737, 94);
+            this.label12.Location = new System.Drawing.Point(782, 94);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(33, 19);
             this.label12.TabIndex = 59;
@@ -447,7 +483,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label13.Location = new System.Drawing.Point(475, 94);
+            this.label13.Location = new System.Drawing.Point(368, 94);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(144, 19);
             this.label13.TabIndex = 58;
@@ -457,7 +493,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label14.Location = new System.Drawing.Point(230, 94);
+            this.label14.Location = new System.Drawing.Point(164, 94);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(139, 19);
             this.label14.TabIndex = 57;
@@ -586,5 +622,8 @@
         private FontAwesome.Sharp.IconButton btnRefreshdeact;
         private System.Windows.Forms.DataGridViewImageColumn VERDEACT;
         private System.Windows.Forms.DataGridViewImageColumn ACTIVAR;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
     }
 }

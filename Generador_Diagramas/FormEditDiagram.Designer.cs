@@ -50,6 +50,7 @@
             this.lstFlechasConectors = new System.Windows.Forms.ListBox();
             this.BTNELIMINAR = new FontAwesome.Sharp.IconButton();
             this.BTNGUARDAR = new FontAwesome.Sharp.IconButton();
+            this.GUARDARDIALOG = new System.Windows.Forms.SaveFileDialog();
             this.paneltop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -261,7 +262,7 @@
             this.Conectores.Padding = new System.Windows.Forms.Padding(3);
             this.Conectores.Size = new System.Drawing.Size(337, 380);
             this.Conectores.TabIndex = 1;
-            this.Conectores.Text = "Conectores";
+            this.Conectores.Text = "Flechas";
             // 
             // lstFlechasConectors
             // 
@@ -369,5 +370,6 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.SaveFileDialog GUARDARDIALOG;
     }
 }

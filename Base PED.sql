@@ -19,9 +19,12 @@ CREATE TABLE Diagramas_Generados(
     Ruta varchar(1000),
     Fecha_Creacion datetime,
     Status_Activo boolean,
+    Ultima_Edicion datetime default now(),
     constraint PK_IDDIAGRAM PRIMARY KEY(ID_Diagrama),
     CONSTRAINT FK_IDUSER FOREIGN KEY(ID_Usuario) REFERENCES Usuarios(ID_Usuario)
 );
+
+
 DELIMITER $$  
 create procedure SP_Login(IN Usuario VARCHAR(200) , IN Passwords VARCHAR(356))
 BEGIN 
@@ -84,7 +87,7 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE SP_VERDIAGRAM(IN IDUSER INT,IN STATUSDES boolean)
 BEGIN
-SELECT ID_Diagrama,Nombre,ArchivoJson,ArchivoPNG,Ruta,Fecha_Creacion,Status_Activo FROM Diagramas_Generados WHERE ID_Usuario = IDUSER AND Status_Activo = STATUSDES;
+SELECT ID_Diagrama,Nombre,ArchivoJson,ArchivoPNG,Ruta,Fecha_Creacion,Status_Activo,Ultima_Edicion FROM Diagramas_Generados WHERE ID_Usuario = IDUSER AND Status_Activo = STATUSDES;
 END
 $$ 
 DELIMITER ;
@@ -92,7 +95,7 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE SP_TODOSDIAGRAMS(IN IDUSER INT)
 BEGIN
-SELECT ID_Diagrama,Nombre,ArchivoJson,ArchivoPNG,Ruta,Fecha_Creacion,Status_Activo FROM Diagramas_Generados WHERE ID_Usuario = IDUSER;
+SELECT ID_Diagrama,Nombre,ArchivoJson,ArchivoPNG,Ruta,Fecha_Creacion,Status_Activo,Ultima_Edicion FROM Diagramas_Generados WHERE ID_Usuario = IDUSER;
 END
 $$ 
 DELIMITER ;
@@ -104,11 +107,19 @@ UPDATE Diagramas_Generados SET Status_Activo=STATUSDES WHERE ID_Diagrama = IDIAG
 END
 $$ 
 DELIMITER ;
+call SP_DEACTOACTDIAGRAM(1,false)
+DELIMITER $$
+CREATE PROCEDURE SP_EDITARDIAGRAMA(IN IDDIGRAM INT,IN NOMBRE varchar(200),IN ARCHIVOJSON JSON,IN ARCHIVOPNG LONGBLOB,IN FECHAEDICION DATETIME)
+BEGIN
+UPDATE Diagramas_Generados SET Nombre=NOMBRE,ArchivoJson=ARCHIVOJSON,ArchivoPNG=ARCHIVOPNG,Ultima_Edicion=FECHAEDICION WHERE ID_Diagrama=IDDIGRAM;
+END
+$$ 
+DELIMITER ;
 
 DELIMITER $$
-CREATE PROCEDURE SP_EDITARDIAGRAMA(IN IDDIGRAM INT,IN NOMBRE varchar(200),IN ARCHIVOJSON JSON,IN ARCHIVOPNG LONGBLOB)
+CREATE PROCEDURE SP_EDITARDIAGRAMACONRUTA(IN IDDIGRAM INT,IN NOMBRE varchar(200),IN ARCHIVOJSON JSON,IN ARCHIVOPNG LONGBLOB,IN RUTA VARCHAR(1000),IN FECHAEDICION DATETIME)
 BEGIN
-UPDATE Diagramas_Generados SET Nombre=NOMBRE,ArchivoJson=ARCHIVOJSON,ArchivoPNG=ARCHIVOPNG WHERE ID_Diagrama=IDDIGRAM;
+UPDATE Diagramas_Generados SET Nombre=NOMBRE,ArchivoJson=ARCHIVOJSON,ArchivoPNG=ARCHIVOPNG,Ruta=RUTA,Ultima_Edicion=FECHAEDICION WHERE ID_Diagrama=IDDIGRAM;
 END
 $$ 
 DELIMITER ;

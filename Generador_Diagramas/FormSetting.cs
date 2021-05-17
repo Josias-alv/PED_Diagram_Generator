@@ -43,9 +43,8 @@ namespace Generador_Diagramas
             RES = fo.ShowDialog();
             if(RES == DialogResult.OK)
             {
-                neg.Desactivar_Activar_Usuario(FormLogin.ID_Usuario, false);
-                FormCompletado.Mensaje("TAREA COMPLETADA", "SE DESACTIVO SU CUENTA CORRECTAMENTE ESPERAMOS QUE VUELVA PRONTO A DIAGRAMAR CON NOSOTROS!!...");
-                Application.Restart(); //reinicia la app
+                FormConfirmDesactivar f = new FormConfirmDesactivar();
+                f.ShowDialog();
             }
         }
 
